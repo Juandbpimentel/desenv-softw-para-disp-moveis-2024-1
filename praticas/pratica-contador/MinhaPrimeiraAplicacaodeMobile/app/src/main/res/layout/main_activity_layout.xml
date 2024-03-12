@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Meu primeiro app"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDescricao"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/textViewDescricao"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDescricao"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:text="Essa é minha primeira aplicação feita para android de forma nativa : )"
+        app:layout_constraintEnd_toEndOf="@+id/textViewQueMostraContador"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textViewQueMostraContador"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
+
+    <TextView
+        android:id="@+id/textViewQueMostraContador"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:text="Clique no botão abaixo para ir para o contador de cliques!"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/botaoParaIrParaOContador"
+        app:layout_constraintEnd_toEndOf="@+id/botaoParaIrParaOContador"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/botaoParaIrParaOContador" />
+
+    <Button
+        android:id="@+id/botaoParaIrParaOContador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:text="Ir para Contador"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

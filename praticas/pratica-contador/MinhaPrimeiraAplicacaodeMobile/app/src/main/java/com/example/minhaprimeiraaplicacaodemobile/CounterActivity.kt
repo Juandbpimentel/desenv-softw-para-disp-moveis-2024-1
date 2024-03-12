@@ -10,14 +10,14 @@ class CounterActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.main_activity_layout)
-        /*
+        setContentView(R.layout.counter_activity)
+
         var cliquesFeitos = 0
 
 
         // contador de cliques
-        val botao: Button = findViewById(R.id.botaoDeContagem)
-        val botaoDeVoltar: Button = findViewById(R.id.botaoParaVoltar)
+        val botao: Button = findViewById(R.id.buttonContador)
+        val botaoDeVoltar: Button = findViewById(R.id.buttonVoltarTelaPrincipal)
         val textView : TextView = findViewById(R.id.textViewContador)
         botao.setOnClickListener {
             cliquesFeitos++
@@ -26,7 +26,7 @@ class CounterActivity : AppCompatActivity(){
         botaoDeVoltar.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-        */
+
 
     }
 }
