@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 contador++;
                 tv_contador.setText(String.valueOf(contador));
         });
-        btn_chama_calculadora.setOnClickListener(v->{
+        btn_chama_calculadora.setOnClickListener(v -> {
             Intent novaAtividade = new Intent(this, CalculadoraActivity.class);
             novaAtividade.putExtra("ultimo_valor_contador",String.valueOf(contador));
             startActivity(novaAtividade);
