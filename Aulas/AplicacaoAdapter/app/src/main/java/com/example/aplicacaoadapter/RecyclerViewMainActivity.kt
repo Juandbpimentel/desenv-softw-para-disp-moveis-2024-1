@@ -20,7 +20,7 @@ class RecyclerViewMainActivity : AppCompatActivity() {
         rv_cidades.layoutManager = LinearLayoutManager(this)
         rv_cidades.adapter = itemArrayAdapter
 
-        for (i in 0..itemList.size){
+        for (i in 0..100){
             itemList.add(Item("Item "+i))
         }
     }
