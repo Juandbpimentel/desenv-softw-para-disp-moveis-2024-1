@@ -69,7 +69,7 @@ public class ListViewCustomAdapter extends BaseAdapter {
             Intent intent = new Intent(context, ItemActivity.class);
             intent.putExtra("item_title", items.get(position).getName());
             intent.putExtra("item_description", items.get(position).getDescription());
-            intent.putExtra("item_image_id", items.get(position).getImage().get);
+            intent.putExtra("item_image_id", items.get(position).getImageId());
             context.startActivity(intent);
             Toast.makeText(context, "Clicou no item "+items.get(position).getName(), Toast.LENGTH_SHORT).show();
         });
