@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="charmander_background">
+        #FFBB8B6A
+    </color>
+    <color name="charmander_button_background">#BA4C00</color>
+    <color name="charmander_button_text">
+        #FF000000
+    </color>
+
+    <color name="charmeleon_background">
+        #FFA6584F
+    </color>
+    <color name="charmeleon_button_background">#AE1200</color>
+    <color name="charmeleon_button_text">
+        #FF000000
+    </color>
+
+    <color name="charizard_background">
+        #AA6D4B
+    </color>
+    <color name="charizard_button_background">#BA4300</color>
+    <color name="charizard_button_text">
+        #FF000000
+    </color>
+
+</resources>

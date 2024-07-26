@@ -19,13 +19,13 @@ class RecyclerViewMainActivity : AppCompatActivity() {
         val itemArrayAdapter:ItemArrayAdapter = ItemArrayAdapter(R.layout.item_fragment,itemList)
         rv_cidades.layoutManager = LinearLayoutManager(this)
         rv_cidades.adapter = itemArrayAdapter
-        itemList.add(Item("Joelho",getDrawable(R.drawable.joelho)!!,"Preço R$ 3,00"))
-        itemList.add(Item("Pastel",getDrawable(R.drawable.pastel_de_feira)!!,"Preço R$ 4,00"))
-        itemList.add(Item("Rodízio de Caldo de Cana",getDrawable(R.drawable.caldo_de_cana)!!,"Preço R$ 4,00"))
-        itemList.add(Item("Coxinha",getDrawable(R.drawable.coxinha_de_feira)!!,"Preço R$ 2,50"))
-        itemList.add(Item("Kibe",getDrawable(R.drawable.kibe_de_feira)!!,"Preço R$ 4,00"))
-        itemList.add(Item("Empada",getDrawable(R.drawable.empada_de_feira)!!,"Preço R$ 5,00"))
-        itemList.add(Item("Enroladinho de Queijo com presunto",getDrawable(R.drawable.salgado_de_queijo_de_feira)!!,"Preço R$ 3,00"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.joelho)!!,"Preço R$ 3,00"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.pastel_de_feira)!!,"Preço R$ 4,00"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.caldo_de_cana)!!,"Preço R$ 4,00"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.coxinha_de_feira)!!,"Preço R$ 2,50"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.kibe_de_feira)!!,"Preço R$ 4,00"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.empada_de_feira)!!,"Preço R$ 5,00"))
+        itemList.add(Item("Tô indo praí",getDrawable(R.drawable.salgado_de_queijo_de_feira)!!,"Preço R$ 3,00"))
 
     }
 }
