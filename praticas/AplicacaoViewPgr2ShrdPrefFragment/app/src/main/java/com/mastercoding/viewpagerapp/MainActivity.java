@@ -36,18 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SharedPreferences sharedPref = getSharedPreferences();
-
-        try {
-            Pokemon pokemon1 = Pokemon.jsonStringToPokemon(sharedPref.getString("pokemon_1","Pokemon 1 não achado"));
-            Log.println(Log.DEBUG,"teste destransformando json string em objeto",pokemon1.toString());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-
-        Log.println(Log.DEBUG,"teste",sharedPref.getString("pokemon_1","Pokemon 1 não achado"));
-        Log.println(Log.DEBUG,"teste",sharedPref.getString("pokemon_2","Pokemon 2 não achado"));
-        Log.println(Log.DEBUG,"teste",sharedPref.getString("pokemon_3","Pokemon 3 não achado"));
         tabLayout = findViewById(R.id.tablayout);
         TextView tvTituloMain = this.findViewById(R.id.tvTituloMain);
         tvTituloMain.setText(sharedPref.getString("titulo_main_activity", "Título não achado"));
