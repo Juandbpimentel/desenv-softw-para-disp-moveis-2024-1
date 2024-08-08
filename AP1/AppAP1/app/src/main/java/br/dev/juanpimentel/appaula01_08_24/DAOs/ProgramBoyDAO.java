@@ -1,4 +1,4 @@
-package br.dev.juanpimentel.appaula01_08_24.DAOs;
+package br.dev.juanpimentel.appap1.DAOs;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -9,7 +9,7 @@ import androidx.room.Update;
 import java.util.List;
 import java.util.UUID;
 
-import br.dev.juanpimentel.appaula01_08_24.Entities.ProgramBoy;
+import br.dev.juanpimentel.appap1.Entities.ProgramBoy;
 
 @Dao
 public interface ProgramBoyDAO {

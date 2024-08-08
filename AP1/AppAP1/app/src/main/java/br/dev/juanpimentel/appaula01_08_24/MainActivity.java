@@ -1,4 +1,4 @@
-package br.dev.juanpimentel.appaula01_08_24;
+package br.dev.juanpimentel.appap1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,10 +18,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-import br.dev.juanpimentel.appaula01_08_24.Adapters.PrograBoyArrayAdapter;
-import br.dev.juanpimentel.appaula01_08_24.DAOs.ProgramBoyDAO;
-import br.dev.juanpimentel.appaula01_08_24.Databases.AppDatabase;
-import br.dev.juanpimentel.appaula01_08_24.Entities.ProgramBoy;
+import br.dev.juanpimentel.appap1.Adapters.PrograBoyArrayAdapter;
+import br.dev.juanpimentel.appap1.DAOs.ProgramBoyDAO;
+import br.dev.juanpimentel.appap1.Databases.AppDatabase;
+import br.dev.juanpimentel.appap1.Entities.ProgramBoy;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
 
