@@ -16,6 +16,9 @@
             android:name=".CreateProgramBoy"
             android:exported="false" />
         <activity
+            android:name=".CreateTodo"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

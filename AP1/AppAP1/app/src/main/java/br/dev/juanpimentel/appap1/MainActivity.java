@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,17 +20,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 import br.dev.juanpimentel.appap1.Adapters.PrograBoyArrayAdapter;
+import br.dev.juanpimentel.appap1.Adapters.TodoArrayAdapter;
 import br.dev.juanpimentel.appap1.DAOs.ProgramBoyDAO;
+import br.dev.juanpimentel.appap1.DAOs.TodoDAO;
 import br.dev.juanpimentel.appap1.Databases.AppDatabase;
 import br.dev.juanpimentel.appap1.Entities.ProgramBoy;
+import br.dev.juanpimentel.appap1.Entities.Todo;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
 
-    RecyclerView recyclerViewPB;
-    FloatingActionButton createProgramBoyBtn;
-    ArrayList<ProgramBoy> programadores;
-    PrograBoyArrayAdapter adapter;
-    ProgramBoyDAO programBoyDAO;
+    RecyclerView recyclerViewTodo;
+    Button createTodobtn;
+    ArrayList<Todo> todos;
+    TodoArrayAdapter adapter;
+    TodoDAO todoDAO;
     AppDatabase db;
 
     @Override
@@ -38,9 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        recyclerViewPB = findViewById(R.id.recyclerViewPB);
-        createProgramBoyBtn = findViewById(R.id.main_activity_flt_btn_add_program_boy);
-        createProgramBoyBtn.setOnClickListener(this);
+        recyclerViewTodo = findViewById(R.id.recyclerViewTodo);
+        createTodobtn = findViewById(R.id.main_btn_create_novo);
+        createTodobtn.setOnClickListener(this);
 
         db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "app-database")
                 .enableMultiInstanceInvalidation()
@@ -48,14 +52,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .fallbackToDestructiveMigration()
                 .build();
 
-        programBoyDAO = db.programBoyDAO();
-        programadores = new ArrayList<ProgramBoy>(programBoyDAO.getAll());
+        todoDAO = db.todoDAO();
+        todos = new ArrayList<Todo>(todoDAO.getAll());
 
-        adapter = new PrograBoyArrayAdapter(R.layout.programboy_fragment, (ArrayList<ProgramBoy>) programadores);
-        recyclerViewPB.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewPB.setAdapter(adapter);
-        for (ProgramBoy p : programadores ) {
-           Log.d("Pessoa",p.toString());
+        adapter = new TodoArrayAdapter(R.layout.todo_fragment, todos);
+        recyclerViewTodo.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewTodo.setAdapter(adapter);
+        for (Todo t : todos ) {
+           Log.d("Todo",t.toString());
         }
         swipeToDelete();
     }
@@ -69,21 +73,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                Toast.makeText(MainActivity.this, "Você deletou o programador", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Você deletou o todo com sucesso!", Toast.LENGTH_SHORT).show();
                 int position = viewHolder.getAdapterPosition();
-                ProgramBoy programador = programadores.get(position);
-                programadores.remove(position);
+                Todo todo = todos.get(position);
+                todos.remove(position);
                 adapter.notifyItemRemoved(position);
                 adapter.notifyItemRangeChanged(position, adapter.getItemCount());
-                programBoyDAO.delete(programador);
+                todoDAO.delete(todo);
             }
-        }).attachToRecyclerView(recyclerViewPB);
+        }).attachToRecyclerView(recyclerViewTodo);
     }
 
     @Override
     public void onClick(View v) {
-        if (v == createProgramBoyBtn) {
-            Intent intent = new Intent(this, CreateProgramBoy.class);
+        if (v == createTodobtn) {
+            Intent intent = new Intent(this, CreateTodo.class);
             startActivity(intent);
         }
     }
@@ -91,11 +95,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        ProgramBoyDAO programBoyDAO = db.programBoyDAO();
-        programadores = new ArrayList<ProgramBoy>(programBoyDAO.getAll());
-        adapter = new PrograBoyArrayAdapter(R.layout.programboy_fragment, (ArrayList<ProgramBoy>) programadores);
-        recyclerViewPB.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewPB.setAdapter(adapter);
+        TodoDAO todoDAO = db.todoDAO();
+        todos = new ArrayList<Todo>(todoDAO.getAll());
+        adapter = new TodoArrayAdapter(R.layout.todo_fragment, (ArrayList<Todo>) todos);
+        recyclerViewTodo.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewTodo.setAdapter(adapter);
         swipeToDelete();
     }
 }

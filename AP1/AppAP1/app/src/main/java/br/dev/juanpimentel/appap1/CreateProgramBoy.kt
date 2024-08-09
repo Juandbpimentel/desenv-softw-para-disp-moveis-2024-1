@@ -1,7 +1,6 @@
 package br.dev.juanpimentel.appap1
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -10,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room.databaseBuilder
-import br.dev.juanpimentel.appap1.DAOs.ProgramBoyDAO
 import br.dev.juanpimentel.appap1.Databases.AppDatabase
 import br.dev.juanpimentel.appap1.Entities.ProgramBoy
 
