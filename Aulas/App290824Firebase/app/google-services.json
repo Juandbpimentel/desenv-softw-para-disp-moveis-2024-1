@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165592751753",
+    "project_id": "dsdm-aulas",
+    "storage_bucket": "dsdm-aulas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165592751753:android:d118f68de381e8a8aa3058",
+        "android_client_info": {
+          "package_name": "br.ufc.quixada.aula290824firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB385E9dsLfdXw1z9xG0YGspVKmFKg9uZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
