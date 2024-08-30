@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import br.ufc.quixada.aula290824firebase.models.Ativo;
 import br.ufc.quixada.aula290824firebase.models.Usuario;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase fbDatabase = FirebaseDatabase.getInstance();
         DatabaseReference dbAulaRef = fbDatabase.getReference();
         List<Usuario> usuarios = new ArrayList<>();
-        List<Ativo> ativos = new ArrayList<>();
         dbAulaRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -56,22 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     textoDoLog.append("{\"nome\":\"").append(usuario.getNome()).append("\",\"email\":\"").append(usuario.getEmail()).append("\"},");
                 }
                 textoDoLog.append("]}");
-                Log.d("aula-app", textoDoLog.toString().replace(",]","]"));
-                for (DataSnapshot statusSnapshot: snapshot.child("ativos").getChildren()) {
-                    Ativo ativo = statusSnapshot.getValue(Ativo.class);
-                    Log.d("aula-app", String.valueOf(Integer.parseInt(Objects.requireNonNull(statusSnapshot.getKey()))));
-                    if (Integer.parseInt(Objects.requireNonNull(statusSnapshot.getKey())) <= ativos.size()) {
-                        ativos.add(ativo);
-                    }else{
-                        ativos.set(Integer.parseInt(Objects.requireNonNull(statusSnapshot.getKey())),ativo);
-                    }
-                }
-                StringBuilder textoDoLogAtivos = new StringBuilder("{\"ativos\":[");
-                for ( Ativo ativo: ativos) {
-                    textoDoLogAtivos.append(ativo.toString());
-                }
-                textoDoLogAtivos.append("]}");
-                Log.d("aula-app", textoDoLogAtivos.toString().replace(",]","]"));
+               Log.d("aula-app", textoDoLog.toString().replace(",]","]"));
             }
 
             @Override

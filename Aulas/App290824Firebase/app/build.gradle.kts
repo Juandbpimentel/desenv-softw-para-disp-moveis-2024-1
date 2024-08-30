@@ -7,6 +7,10 @@ android {
     namespace = "br.ufc.quixada.aula290824firebase"
     compileSdk = 34
 
+    buildFeatures{
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId = "br.ufc.quixada.aula290824firebase"
         minSdk = 24
@@ -40,6 +44,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.lifecycle.extensions)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
